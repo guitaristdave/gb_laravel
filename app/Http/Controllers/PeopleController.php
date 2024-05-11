@@ -29,4 +29,22 @@ class PeopleController extends Controller
         $human->save();
         return redirect('/people');
     }
+
+
+    public function edit(People $people)
+    {
+        return view('people.edit', compact('people'));
+    }
+
+    public function update(Request $request, People $people)
+    {
+       $people->update($request->all());
+        return redirect('/people');
+    }
+
+    public function destroy(People $people)
+    {
+        $people->delete();
+        return redirect('/people');
+    }
 }

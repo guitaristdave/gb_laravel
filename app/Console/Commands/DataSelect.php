@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\Employee;
+use App\Models\People;
 use Illuminate\Console\Command;
 
 class DataSelect extends Command
@@ -26,9 +27,9 @@ class DataSelect extends Command
      */
     public function handle()
     {
-        $employees = Employee::where('age', '>', 30)->get();
-        foreach ($employees as $employee) {
-            echo $employee->firstname . "\n";
-        };
+        $people = People::all();
+        foreach ($people as $person) {
+            echo $person . "\n";
+        }
     }
 }
