@@ -15,6 +15,9 @@
                 <a class="nav-item nav-link {{active_link('register')}}" href="{{route('register')}}">
                     {{__('Регистрация')}}
                 </a>
+                <a class="nav-item nav-link {{active_link('people')}}" href="{{route('people')}}">
+                    {{__('Пользователи')}}
+                </a>
 
             </div>
         </div>
