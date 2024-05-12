@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\Employee;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
 
 class DataSelect extends Command
 {
@@ -26,7 +27,10 @@ class DataSelect extends Command
      */
     public function handle()
     {
-        $employees = Employee::where('age', '>', 30)->get();
+        $employees = DB::table('employees')
+            ->distinct('firstname')
+            ->get(['firstname']);
+
         foreach ($employees as $employee) {
             echo $employee->firstname . "\n";
         };
