@@ -16,7 +16,7 @@
                     @csrf
                     <div class="mb-3">
                         <label class="required">{{__('Имя')}}</label>
-                        <input type="text" name="name" class="form-control" value="{{$people->firstname}}" autofocus>
+                        <input type="text" name="firstname" class="form-control" value="{{$people->firstname}}" autofocus>
                     </div>
 
                     <div class="mb-3">
