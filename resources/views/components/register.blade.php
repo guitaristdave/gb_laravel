@@ -23,10 +23,7 @@
                 <input type="email" name="email" class="form-control" autofocus>
             </div>
 
-            <div class="mb-3">
-                <label class="required">{{__('Пароль')}}</label>
-                <input type="password" name="password" class="form-control">
-            </div>
+
 
             <div class="mb-3">
                 <label class="required">{{__('Пароль еще раз')}}</label>

@@ -31,5 +31,8 @@
                 </tr>
             @endforeach
         </table>
+        <div class="center">
+            {{$people->links()}}
+        </div>
     </div>
 @endsection

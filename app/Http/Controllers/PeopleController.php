@@ -4,17 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\People;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\View\View;
 
 class PeopleController extends Controller
 {
-    public function index()
+    public function index(): View
     {
-        $people = People::all();
-        return view('people.index', compact('people'));
+        $people = DB::table('people')->paginate(10);
+        return view('people.index', ['people' => $people]);
     }
 
-    public function create()
+    public function create(): View
     {
         return view('people.create');
     }
