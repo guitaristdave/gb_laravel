@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,11 @@ Route::post('/login', [LoginController::class, 'store'])->name('login.store');
 
 Route::get('register', [RegisterController::class, 'index'])->name('register');
 Route::post('register', [RegisterController::class, 'store'])->name('register.store');
+
+Route::get('/people', [PeopleController::class, 'index'])->name('people');
+Route::get('/people/create', [PeopleController::class, 'create'])->name('people.create');
+Route::post('/people', [PeopleController::class, 'store'])->name('people.store');
+Route::get('/people/{people}/edit', [PeopleController::class, 'edit'])->name('people.edit');
+Route::patch('/people/{people}', [PeopleController::class, 'update'])->name('people.update');
+Route::delete('/people/{people}', [PeopleController::class, 'destroy'])->name('people.destroy');
+
