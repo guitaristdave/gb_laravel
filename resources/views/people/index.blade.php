@@ -4,7 +4,8 @@
 
 @section('content')
     <div class="container">
-        <a href="{{route('people.create')}}" class="btn btn-primary mb-3">Создать</a>
+        <a href="{{route('people.create', ['type' => 'simple'])}}" class="btn btn-primary mb-3">Создать</a>
+        <a href="{{route('people.create', ['type' => 'json'])}}" class="btn btn-primary mb-3">JSON</a>
         <table class="table table-striped">
             <tr>
                <th>Имя</th><th>Фамилия</th><th>E-mail</th><th></th><th></th>

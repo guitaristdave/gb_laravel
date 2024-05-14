@@ -37,4 +37,5 @@ class DataSelect extends Command
             echo $employee->firstname . "\n";
         };
 
+    }
 }

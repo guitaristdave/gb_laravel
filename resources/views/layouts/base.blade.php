@@ -11,6 +11,11 @@
         a {
             text-decoration: none;
         }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
     </style>
 </head>
 <body>

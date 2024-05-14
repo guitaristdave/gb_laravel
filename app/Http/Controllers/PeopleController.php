@@ -6,6 +6,7 @@ use App\Models\People;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
 
 class PeopleController extends Controller
@@ -21,17 +22,25 @@ class PeopleController extends Controller
         return view('people.create');
     }
 
+
+
     public function store(Request $request)
     {
+        if ($request->input('jsonObj'))
+        {
+            $request = json_decode($request->input('jsonObj'));
+        } else {
+            $request = (object)$request->input();
+        }
+
         $human = new People();
-        $human->firstname = $request->get('name');
-        $human->lastname = $request->get('lastname');
-        $human->email = request('email');
-        $human->password = Hash::make($request->get('password'));
+        $human->firstname = $request->firstname;
+        $human->lastname = $request->lastname;
+        $human->email = $request->email;
+        $human->password = Hash::make($request->password);
         $human->save();
         return redirect('/people');
     }
-
 
     public function edit(People $people)
     {

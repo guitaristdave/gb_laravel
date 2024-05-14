@@ -3,7 +3,7 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\WeatherController;
+use App\Http\Controllers\RequestTestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,3 +32,5 @@ Route::get('/people/{people}/edit', [PeopleController::class, 'edit'])->name('pe
 Route::patch('/people/{people}', [PeopleController::class, 'update'])->name('people.update');
 Route::delete('/people/{people}', [PeopleController::class, 'destroy'])->name('people.destroy');
 
+Route::get('/test', [RequestTestController::class, 'index'])->name('test');
+Route::post('/test', [RequestTestController::class, 'store'])->name('test.store');
