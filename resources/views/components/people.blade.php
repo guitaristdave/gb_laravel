@@ -10,7 +10,7 @@
             @csrf
             <div class="mb-3">
                 <label class="required">{{__('Имя')}}</label>
-                <input type="text" name="name" class="form-control" autofocus>
+                <input type="text" name="firstname" class="form-control" autofocus>
             </div>
 
             <div class="mb-3">
