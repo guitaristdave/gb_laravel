@@ -26,7 +26,10 @@ class PeopleController extends Controller
 
     public function store(Request $request)
     {
-        if ($request->input('jsonObj'))
+        if ($request->isJson()) {
+            $request = (object)$request->json()->all();
+        }
+        else if ($request->input('jsonObj'))
         {
             $request = json_decode($request->input('jsonObj'));
         } else {
