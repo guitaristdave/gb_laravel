@@ -10,7 +10,7 @@
             @csrf
             <div class="mb-3">
                 <label class="required">{{__('Имя')}}</label>
-                <input type="text" name="name" class="form-control">
+                <input type="text" name="name" class="form-control" autofocus>
             </div>
 
             <div class="mb-3">
@@ -20,7 +20,7 @@
 
             <div class="mb-3">
                 <label class="required">{{__('E-mail')}}</label>
-                <input type="email" name="email" class="form-control" autofocus>
+                <input type="email" name="email" class="form-control" >
             </div>
 
 

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
     <div class="container">
-        <a class="navbar-brand" href="#">{{config('app.name')}}</a>
+        <a class="navbar-brand" href="{{route('home')}}">{{config('app.name')}}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -18,7 +18,9 @@
                 <a class="nav-item nav-link {{active_link('people')}}" href="{{route('people')}}">
                     {{__('Пользователи')}}
                 </a>
-
+                <a class="nav-item nav-link {{active_link('library')}}" href="{{route('library')}}">
+                    {{__('Библиотека')}}
+                </a>
             </div>
         </div>
     </div>
