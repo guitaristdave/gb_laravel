@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\RegisterController;
@@ -32,5 +33,10 @@ Route::get('/people/{people}/edit', [PeopleController::class, 'edit'])->name('pe
 Route::patch('/people/{people}', [PeopleController::class, 'update'])->name('people.update');
 Route::delete('/people/{people}', [PeopleController::class, 'destroy'])->name('people.destroy');
 
-Route::get('/test', [RequestTestController::class, 'index'])->name('test');
-Route::post('/test', [RequestTestController::class, 'store'])->name('test.store');
+
+Route::get('/library', [BookController::class, 'index'])->name('library');
+Route::get('/library/create', [BookController::class, 'create'])->name('library.create');
+Route::post('/library', [BookController::class, 'store'])->name('library.store');
+Route::get('/library/{book}/edit', [BookController::class, 'edit'])->name('library.edit');
+Route::patch('/library/{book}', [BookController::class, 'update'])->name('library.update');
+Route::delete('/library/{book}', [BookController::class, 'destroy'])->name('library.destroy');
