@@ -30,12 +30,13 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
+        $year = date('Y');
         $validated = $request->validate([
             'author' => ['required', 'max:100'],
             'name' => ['required', 'unique:books', 'max:255'],
             'genre' => ['required'],
             'language' => ['required'],
-            'year' => ['required'],
+            'year' => ['required', 'integer', "between:1000,{$year}"],
         ]);
 
         $book = new Book();
@@ -68,7 +69,7 @@ class BookController extends Controller
             'name' => ['required', 'max:255'],
             'genre' => ['required'],
             'language' => ['required'],
-            'year' => ['required'],
+            'year' => ['required', 'digits_between:1000,2024'],
         ]);
         $book->update($request->all());
         return redirect('/library');

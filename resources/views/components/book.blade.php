@@ -10,27 +10,27 @@
             @csrf
             <div class="mb-3">
                 <label class="required">{{__('Автор')}}</label>
-                <input type="text" name="author" class="form-control" autofocus>
+                <input type="text" name="author" class="form-control" value="{{ old('author') }}" autofocus>
             </div>
 
             <div class="mb-3">
                 <label class="required">{{__('Название')}}</label>
-                <input type="text" name="name" class="form-control">
+                <input type="text" name="name" class="form-control" value="{{ old('name') }}">
             </div>
 
             <div class="mb-3">
                 <label class="required">{{__('Жанр')}}</label>
-                <input type="text" name="genre" class="form-control" >
+                <input type="text" name="genre" class="form-control" value="{{ old('genre') }}">
             </div>
 
             <div class="mb-3">
                 <label class="required">{{__('Язык')}}</label>
-                <input type="text" name="language" class="form-control" >
+                <input type="text" name="language" class="form-control" value="{{ old('language') }}">
             </div>
 
             <div class="mb-3">
                 <label class="required">{{__('Год')}}</label>
-                <input type="text" name="year" class="form-control" >
+                <input type="text" name="year" class="form-control" value="{{ old('year') }}">
             </div>
 
             <button type="submit" class="btn btn-primary">
