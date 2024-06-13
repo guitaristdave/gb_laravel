@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\LogController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\RegisterController;
@@ -40,3 +41,5 @@ Route::post('/library', [BookController::class, 'store'])->name('library.store')
 Route::get('/library/{book}/edit', [BookController::class, 'edit'])->name('library.edit');
 Route::patch('/library/{book}', [BookController::class, 'update'])->name('library.update');
 Route::delete('/library/{book}', [BookController::class, 'destroy'])->name('library.destroy');
+
+Route::get('/logs', [LogController::class, 'index'])->name('logs');
