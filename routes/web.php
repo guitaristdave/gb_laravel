@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\GameController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\RegisterController;
@@ -40,3 +41,12 @@ Route::post('/library', [BookController::class, 'store'])->name('library.store')
 Route::get('/library/{book}/edit', [BookController::class, 'edit'])->name('library.edit');
 Route::patch('/library/{book}', [BookController::class, 'update'])->name('library.update');
 Route::delete('/library/{book}', [BookController::class, 'destroy'])->name('library.destroy');
+
+
+Route::get('/games', [GameController::class, 'index'])->name('games');
+Route::get('/games/{game}', [GameController::class, 'show'])->name('games.show');
+Route::post('/games', [GameController::class, 'store'])->name('games.store');
+Route::patch('/games/{game}', [GameController::class, 'update'])->name('games.patch');
+Route::put('/games/{game}', [GameController::class, 'update'])->name('games.update');
+Route::delete('/games/{game}', [GameController::class, 'destroy'])->name('games.destroy');
+Route::get('/games/{game}/download', [\App\Http\Controllers\PdfGenerateController::class, 'generatePDF'])->name('games.download');
