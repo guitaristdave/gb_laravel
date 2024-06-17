@@ -21,6 +21,9 @@
                 <a class="nav-item nav-link {{active_link('library')}}" href="{{route('library')}}">
                     {{__('Библиотека')}}
                 </a>
+                <a class="nav-item nav-link {{active_link('logs')}}" href="{{route('logs')}}">
+                    {{__('Логи')}}
+                </a>
             </div>
         </div>
     </div>

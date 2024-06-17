@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\LogController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PeopleController;
@@ -43,6 +44,9 @@ Route::patch('/library/{book}', [BookController::class, 'update'])->name('librar
 Route::delete('/library/{book}', [BookController::class, 'destroy'])->name('library.destroy');
 
 
+Route::get('/logs', [LogController::class, 'index'])->name('logs');
+
+
 Route::get('/games', [GameController::class, 'index'])->name('games');
 Route::get('/games/{game}', [GameController::class, 'show'])->name('games.show');
 Route::post('/games', [GameController::class, 'store'])->name('games.store');
@@ -50,3 +54,4 @@ Route::patch('/games/{game}', [GameController::class, 'update'])->name('games.pa
 Route::put('/games/{game}', [GameController::class, 'update'])->name('games.update');
 Route::delete('/games/{game}', [GameController::class, 'destroy'])->name('games.destroy');
 Route::get('/games/{game}/download', [\App\Http\Controllers\PdfGenerateController::class, 'generatePDF'])->name('games.download');
+
